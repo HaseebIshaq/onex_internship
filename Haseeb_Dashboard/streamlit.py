@@ -19,7 +19,8 @@ st.markdown("---")
 # Filter options (Drop Down Options)
 # date_options = pd.to_datetime(df['Date']).dt.date.unique()
 date_options = df['Date'].unique()
-all_locations = ['New York', 'San Francisco', 'Nevada', 'Los Angeles']
+all_locations = df['Store Location'].unique()
+# all_locations = ['New York', 'San Francisco', 'Nevada', 'Los Angeles']
 
 # Sidebar filters (removing/adding filters with checkboxes)
 st.sidebar.markdown("## Filters")
