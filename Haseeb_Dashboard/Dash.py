@@ -18,11 +18,14 @@ app.layout = html.Div(
     style={'background-color': '#153d5a', 'padding': '20px'}
 )
 
+# the detailed layout
 app.layout = html.Div([
+    # heading
     html.H1("Web Application Dashboards for the sales data (w.r.t. Date)",
             style={'text-align': 'center', 'background-color': '#99ccff', 'color': '#153d5a',
                    'padding': '10px', 'margin-bottom': '20px', 'border-radius': '10px'}),
     html.Hr(),
+    # Dropdown menu
     html.Div([
         dcc.Dropdown(
             id="SelectDate",
@@ -61,6 +64,7 @@ app.layout = html.Div([
     html.Br(),
     html.Div(
         children=[
+            # Graphs arrangements
             html.Div([
                 dcc.Graph(id='dash_map1', figure={}),
                 dcc.Graph(id='dash_map2', figure={}),
@@ -104,6 +108,8 @@ app.layout = html.Div([
 # ------------------------------------------------------------------------------
 # Connect the Plotly graphs with Dash Components
 
+# Connection established and same goes for inputs and outputs of web application
+
 
 @app.callback(
     [Output(component_id='output_container1', component_property='children'),
@@ -116,6 +122,7 @@ app.layout = html.Div([
     [Input(component_id='SelectDate', component_property='value'),
      Input(component_id='Select Store Location', component_property='value')]
 )
+# the main method for execution
 def update_graph(option_slctd1, option_slctd2):
     container1 = "The date chosen by the user was: {}".format(option_slctd1)
     container2 = "The Location chosen by the user was: {}".format(
@@ -125,6 +132,7 @@ def update_graph(option_slctd1, option_slctd2):
     dff = dff[dff["Date"] == option_slctd1]
     dff = dff[dff["Store Location"] == option_slctd2]
 
+    # All possible graphs defined
     fig1 = px.bar(
         dff['Store Location'].value_counts().reset_index(),
         x='index',
@@ -165,10 +173,11 @@ def update_graph(option_slctd1, option_slctd2):
         x="Store ID",
         y='Price Sold',
         title='Revenue of a Single Store in particular Location'
-        )
+    )
 
     return container1, container2, fig1, fig2, fig3, fig4, fig5
 
 
+# The final main code
 if __name__ == '__main__':
     app.run_server(debug=True)

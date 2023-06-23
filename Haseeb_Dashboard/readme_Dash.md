@@ -1,12 +1,12 @@
 # Sales Data Analysis
 ## Introduction
 The sales data analysis is a summarised example of e-commerce sales data for a retail store, which needs to analyze its sales and derive different relationships,in order to measure the performance of certain products in the market and analyze the sales from a particular location and store outlet.A web application is created here, in the form of an interactive dashboard to do so. The dataset used for this analysis is ***sales_data.csv*** (attached).
-## Working (Dash.py)
+## Working 
 1. There are several libraries needed to be installed. Following is the format to do so: 
 ```py
 pip install <requirements_Dash.docx>
 ```
-2. The given code in *Dash.py* file could be executed on any standardized python environment or IDE e.g. *VScode, Jupyter Notebook etc*, by typing the following command in the terminal:
+2. The given code in **Dash.py** file could be executed on any standardized python environment or IDE e.g. *VScode, Jupyter Notebook etc*, by typing the following command in the terminal:
 ```py
 python streamlit.py
 ```
