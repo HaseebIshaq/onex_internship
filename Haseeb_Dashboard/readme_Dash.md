@@ -8,7 +8,7 @@ pip install <requirements_Dash.docx>
 ```
 2. The given code in **Dash.py** file could be executed on any standardized python environment or IDE e.g. *VScode, Jupyter Notebook etc*, by typing the following command in the terminal:
 ```py
-python streamlit.py
+python Dash.py
 ```
 3. All of the necessary comments are added with each block of code to easily comprehend its working.
 ## Dataset
